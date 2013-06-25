@@ -22,8 +22,8 @@ class Demo extends FellowshipOne{
   
   public $redirectTo = array(
     "6" => "https://staging-www.fellowshipone.com/home.aspx",
-    "626" => "https://staging-integration.fellowshipone.com/integration/FormBuilder/FormBuilder.aspx?fCode=GTbTjYnbf6BVa7e1be3xng==&cCode=fY881ueDPPmqHdh2brL9nw==",
-    "237" => "https://tmazelin.staging.infellowship.com/"
+    "626" => "weblink address to redirect to",
+    "237" => "https://churchcode.staging.infellowship.com/"
   );
 
   /**
@@ -60,7 +60,7 @@ class Demo extends FellowshipOne{
         "accessToken" => self::$f1->accessToken->oauth_token,
         "redirectURL" => $this->redirectTo[$_POST['appId']],
         );
-      $url =  $this->settings['baseUrl'].self::$f1->paths['sso'];//$this->redirectPath;
+      $url =  $this->settings['baseUrl'].self::$f1->paths['sso'];
       $url .= "?" . http_build_query($params);
       return $this->Redirect($url);
   }
